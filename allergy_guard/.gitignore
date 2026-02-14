@@ -3,3 +3,4 @@
 # ignore pdf files
 *.pdf
 config.py
+.env

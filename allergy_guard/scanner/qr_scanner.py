@@ -1,4 +1,4 @@
-import qrcode
+# import qrcode
 from io import BytesIO
 import uuid
 from pathlib import Path
