@@ -1,0 +1,4 @@
+# ignore video files
+*.mp4
+# ignore pdf files
+*.pdf
