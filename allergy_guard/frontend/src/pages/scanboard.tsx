@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { analyzeDish } from '../services/geminiService';
 import { DishReport } from '../types';

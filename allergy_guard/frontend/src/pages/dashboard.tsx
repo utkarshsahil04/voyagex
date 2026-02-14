@@ -1,5 +1,5 @@
-
 import React from 'react';
+import DishCard from '../components/Dishcard';
 
 interface Props {
   onScan: () => void;
@@ -69,34 +69,30 @@ const DashboardPage: React.FC<Props> = ({ onScan, onNavigateHome }) => {
       </div>
 
       <div className="grid grid-cols-1 gap-4">
-        {[
-          { title: 'Quinoa Summer Salad', tags: ['GLUTEN-FREE', 'NUT-FREE', 'VEGAN'], img: 'sal1', status: 'Verified' },
-          { title: 'Angus Classic Burger', tags: ['DAIRY ALERT', 'NUT-FREE'], img: 'bur1', alert: true },
-          { title: 'Harvest Power Bowl', tags: ['NUT-FREE', 'VEGAN'], img: 'bow1', status: 'Verified' },
-          { title: 'Margherita Pizza', tags: ['DAIRY ALERT', 'NUT-FREE'], img: 'piz1', out: true }
-        ].map((dish, i) => (
-          <div key={i} className={`bg-card-dark rounded-xl overflow-hidden flex shadow-sm border border-slate-800 ${dish.out ? 'opacity-60' : ''}`}>
-            <div className={`w-28 h-28 flex-none relative ${dish.out ? 'grayscale' : ''}`}>
-              <img className="w-full h-full object-cover" src={`https://picsum.photos/seed/${dish.img}/200/200`} alt={dish.title} />
-              {dish.status && <div className="absolute top-2 left-2 bg-primary text-background-dark text-[8px] font-bold px-1.5 py-0.5 rounded-full uppercase">{dish.status}</div>}
-            </div>
-            <div className="p-4 flex flex-col justify-between flex-grow">
-              <div>
-                <div className="flex justify-between">
-                  <h3 className="font-bold text-sm text-white">{dish.title}</h3>
-                  {dish.alert && <span className="material-icons text-danger text-sm">warning</span>}
-                  {dish.out && <span className="text-[8px] bg-slate-500 text-white px-1.5 py-0.5 rounded">OUT OF STOCK</span>}
-                </div>
-                <p className="text-[10px] text-slate-500 mt-1 line-clamp-1 italic">Fresh ingredients, daily prep.</p>
-              </div>
-              <div className="flex flex-wrap gap-1 mt-2">
-                {dish.tags.map(t => (
-                  <span key={t} className={`px-1.5 py-0.5 rounded text-[8px] font-bold ${t.includes('ALERT') ? 'bg-danger/20 text-danger' : 'bg-primary/20 text-primary'}`}>{t}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
+        <DishCard
+          title="Quinoa Summer Salad"
+          tags={['GLUTEN-FREE', 'NUT-FREE', 'VEGAN']}
+          img="sal1"
+          status="Verified"
+        />
+        <DishCard
+          title="Angus Classic Burger"
+          tags={['DAIRY ALERT', 'NUT-FREE']}
+          img="bur1"
+          alert={true}
+        />
+        <DishCard
+          title="Harvest Power Bowl"
+          tags={['NUT-FREE', 'VEGAN']}
+          img="bow1"
+          status="Verified"
+        />
+        <DishCard
+          title="Margherita Pizza"
+          tags={['DAIRY ALERT', 'NUT-FREE']}
+          img="piz1"
+          out={true}
+        />
       </div>
 
       {/* FAB */}

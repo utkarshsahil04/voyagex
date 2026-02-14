@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface Props {
@@ -10,7 +9,7 @@ const LandingPage: React.FC<Props> = ({ onStart }) => {
     <div className="pb-24">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 ios-blur bg-background-dark/80 border-b border-primary/10 max-w-md mx-auto">
-        <div class="px-6 h-16 flex items-center justify-between">
+        <div className="px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <span className="material-icons text-background-dark text-xl">shield</span>

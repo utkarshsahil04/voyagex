@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
-import LandingPage from './components/LandingPage';
-import DashboardPage from './components/DashboardPage';
-import ScanPage from './components/ScanPage';
-import ResultPage from './components/ResultPage';
+import LandingPage from './pages/landing';
+import DashboardPage from './pages/dashboard';
+import ScanPage from './pages/scanboard';
+import ResultPage from './pages/resultpage';
 import { Page, DishReport } from './types';
 
 const App: React.FC = () => {
